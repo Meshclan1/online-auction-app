@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  bid-buddy-db:
+    image: postgres
+    restart: always
+    container_name: bid-buddy-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:
+# Image says go to Docker Hub & use the postgres image, run it on the the noted port, and mount it to the volume(s) we have created

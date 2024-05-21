@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <main className="container mx-auto py-12">
-      {session ? <SignIn /> : <SignOut />}
+      {session ? <SignOut /> : <SignIn />}
       {session?.user?.name}
 
       <form

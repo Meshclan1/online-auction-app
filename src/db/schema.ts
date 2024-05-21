@@ -24,7 +24,7 @@ export const bids = pgTable("bb_bids", {
   id: serial("id").primaryKey(),
 });
 
-export const users = pgTable("user", {
+export const users = pgTable("bb_user", {
   id: text("id")
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
@@ -35,7 +35,7 @@ export const users = pgTable("user", {
 });
 
 export const accounts = pgTable(
-  "account",
+  "bb_account",
   {
     userId: text("userId")
       .notNull()
@@ -58,7 +58,7 @@ export const accounts = pgTable(
   })
 );
 
-export const sessions = pgTable("session", {
+export const sessions = pgTable("bb_session", {
   sessionToken: text("sessionToken").primaryKey(),
   userId: text("userId")
     .notNull()
@@ -67,7 +67,7 @@ export const sessions = pgTable("session", {
 });
 
 export const verificationTokens = pgTable(
-  "verificationToken",
+  "bb_verificationToken",
   {
     identifier: text("identifier").notNull(),
     token: text("token").notNull(),
